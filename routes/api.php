@@ -24,6 +24,7 @@ Route::middleware('auth:api')->get('/user', function(Request $request) {
 });
 
 // Login
+Route::get('/user','App\Http\Controllers\AuthController@index'); //extraer todo los usuarios
 Route::post('/user','App\Http\Controllers\AuthController@login'); //Login
 Route::post('/user/create','App\Http\Controllers\AuthController@register'); //crear usuario
 

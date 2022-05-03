@@ -57,9 +57,17 @@ class AuthController extends Controller
             return response()->json([
                 'message' => 'Acceso correcto',
                 'type' => 1,
-                'user' => $user->id
+                'user' => $user->id,
+                'mail'=>$user->email
 
             ], 200);
         }
     }
+
+    public function index()
+    {
+        $user=User::all();
+        return $user;
+    }
+
 }
